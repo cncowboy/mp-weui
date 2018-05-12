@@ -7,11 +7,13 @@ export default {
     console.log('startPullDownRefresh');
   },
   showNavigationBarLoading () {
-    Vue.prototype.$loading('加载中');
+    const args = {
+      text: '加载中',
+    };
+    Vue.prototype.$vux.loading.show(args);
   },
   hideNavigationBarLoading () {
-    if (!document.querySelector('.lx-load-mark')) return;
-    Vue.prototype.$loading.close();
+    Vue.prototype.$vux.loading.hide();
   },
 
   /*
@@ -66,18 +68,18 @@ export default {
         return {
           menus: itemList,
           successCB: success,
-        }
+        };
       },
       methods: {
         onClickMenu(menuKey, menuItem) {
-          successCB(menuKey);
+          this.successCB(menuKey);
         },
       }
     })
-    let actionSheetVue = new actionSheetTpl().$mount()
-    let tpl = actionSheetVue.$el
-    document.body.appendChild(tpl)
-    return actionSheetVue
+    let actionSheetVue = new actionSheetTpl().$mount();
+    let tpl = actionSheetVue.$el;
+    document.body.appendChild(tpl);
+    return actionSheetVue;
   },
   previewImage(opts){
 
