@@ -34,10 +34,11 @@
   "homepage": "https://github.com/youngluo/mp-weui#readme",
   "author": "Young Luo",
   "dependencies": {
+    "weui": "^1.1.2",
+    "vux": "^2.9.1"
   },
   "peerDependencies": {
-    "mpvue": "^1.0.10",
-    "vux": "^2.9.1"
+    "mpvue": "^1.0.10"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
