@@ -1,3 +1,5 @@
+import wx from 'platform/wx';
+
 function close() {
   wx.hideLoading();
 }

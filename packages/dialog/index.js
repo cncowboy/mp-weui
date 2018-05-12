@@ -1,4 +1,5 @@
 import assign from '../../utils/assign';
+import wx from 'platform/wx';
 
 function Dialog(options) {
   delete options.complete;

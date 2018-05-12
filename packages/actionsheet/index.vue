@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import wx from 'platform/wx';
+
 export default {
   name: 'MpActionsheet',
   props: {
