@@ -42,7 +42,7 @@ module.exports = {
     alias: {
       'vue': 'mpvue',
       '@': resolve('src'),
-      'platform': resolve('platform/wexin')
+      'mp-weui-platform': resolve('platform/wexin')
     },
     symlinks: false
   },

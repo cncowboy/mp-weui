@@ -80,7 +80,7 @@ export default {
     onCancel() {
       this.currentValue = '';
       this.visible = false;
-      this.$emit('onCancel');
+      this.$emit('on-cancel');
     },
     onClear() {
       this.currentValue = '';
@@ -89,8 +89,8 @@ export default {
   },
   watch: {
     currentValue(value) {
-      this.$emit('onInput', value);
-      this.$emit('change', value);
+      this.$emit('on-input', value);
+      this.$emit('on-change', value);
     },
     value(value) {
       this.currentValue = value;

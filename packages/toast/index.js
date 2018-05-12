@@ -1,4 +1,4 @@
-import wx from 'platform/wx';
+import wx from 'mp-weui-platform/wx';
 
 function close() {
   wx.hideLoading();

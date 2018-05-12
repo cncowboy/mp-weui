@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import wx from 'platform/wx';
+import wx from 'mp-weui-platform/wx';
 
 export default {
   name: 'MpActionsheet',

@@ -6,7 +6,7 @@
     </div>
     <div class="page__bd">
       <mp-search
-        @confirm="onSearchConfirm"
+        @on-submit="onSearchConfirm"
         @change="onSearchChange"
       />
       <div
