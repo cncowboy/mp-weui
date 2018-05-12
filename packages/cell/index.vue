@@ -1,27 +1,27 @@
 <template>
   <a
-    :class="['weui-cell', {'weui-cell_access': !!href, 'weui-cell_link': isLink}]"
-    :hover-class="(!isLink && !!href) ? 'weui-cell_active' : 'none'"
+    :class="['weui-cell', {'weui-cell_access': !!link, 'weui-cell_link': isLink}]"
+    :hover-class="(!isLink && !!link) ? 'weui-cell_active' : 'none'"
     @click="$emit('click', $event)"
-    :href="href"
+    :link="link"
   >
     <div class="weui-cell_hd">
       <!-- <slot name="icon"> -->
       <img
         class="weui-cell_icon"
-        :src="iconSrc"
-        v-if="iconSrc"
+        :src="icon"
+        v-if="icon"
       />
       <!-- </slot> -->
     </div>
     <div class="weui-cell__bd">
       <!-- <slot> -->
-      <span v-text="content" />
+      <span v-text="label" />
       <!-- </slot> -->
     </div>
-    <div :class="['weui-cell__ft', {'weui-cell__ft_in-access': !!href}]">
-      <!-- <slot name="label"> -->
-      <span v-text="label" />
+    <div :class="['weui-cell__ft', {'weui-cell__ft_in-access': !!link}]">
+      <!-- <slot name="title"> -->
+      <span v-text="title" />
       <!-- </slot> -->
     </div>
   </a>
@@ -31,11 +31,11 @@
 export default {
   name: 'MpCell',
   props: {
-    content: String,
-    iconSrc: String,
-    isLink: Boolean,
     label: String,
-    href: String,
+    icon: String,
+    'has-arrow': Boolean,
+    title: String,
+    link: String,
   },
 };
 </script>

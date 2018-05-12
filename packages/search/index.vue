@@ -8,7 +8,7 @@
           size="14"
         />
         <input
-          @confirm="$emit('confirm', currentValue)"
+          @confirm="$emit('on-submit', currentValue)"
           class="weui-search-bar__input"
           :confirm-type="confirmType"
           :placeholder="placeholder"
@@ -17,7 +17,7 @@
           type="text"
         />
         <div
-          @click="currentValue = ''"
+          @click="onClear"
           class="weui-icon-clear"
           v-if="!!currentValue"
         >
@@ -44,9 +44,9 @@
       </label>
     </div>
     <div
-      @click="currentValue = '', visible = false"
+      @click="onCancel"
       class="weui-search-bar__cancel-btn"
-      v-text="cancelText"
+      v-text="cancelLabel"
       v-if="visible"
     />
   </div>
@@ -64,21 +64,32 @@ export default {
       type: String,
       default: '搜索',
     },
-    cancelText: {
+    cancelLabel: {
       type: String,
       default: '取消',
     },
-    value: String,
+    defaultValue: String,
   },
   data() {
     return {
-      currentValue: this.value,
+      currentValue: this.defaultValue,
       visible: false,
     };
   },
+  methods: {
+    onCancel() {
+      this.currentValue = '';
+      this.visible = false;
+      this.$emit('onCancel');
+    },
+    onClear() {
+      this.currentValue = '';
+      this.$emit('on-clear');
+    },
+  },
   watch: {
     currentValue(value) {
-      this.$emit('input', value);
+      this.$emit('onInput', value);
       this.$emit('change', value);
     },
     value(value) {
@@ -87,4 +98,3 @@ export default {
   },
 };
 </script>
-
