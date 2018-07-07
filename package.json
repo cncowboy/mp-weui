@@ -38,7 +38,7 @@
     "vux": "^2.9.1"
   },
   "peerDependencies": {
-    "mpvue": "^1.0.10"
+    "mpvue": "^1.0.13"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
@@ -72,10 +72,10 @@
     "http-proxy-middleware": "^0.17.3",
     "less": "^3.0.1",
     "less-loader": "^4.1.0",
-    "mpvue": "^1.0.10",
-    "mpvue-loader": "^1.0.13",
-    "mpvue-template-compiler": "^1.0.10",
-    "mpvue-webpack-target": "^1.0.0",
+    "mpvue": "^1.0.13",
+    "mpvue-loader": "^1.0.15",
+    "mpvue-template-compiler": "^1.0.13",
+    "mpvue-webpack-target": "^1.0.1",
     "optimize-css-assets-webpack-plugin": "^2.0.0",
     "ora": "^1.2.0",
     "portfinder": "^1.0.13",
