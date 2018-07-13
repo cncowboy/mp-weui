@@ -36,6 +36,7 @@ export default {
     'has-arrow': Boolean,
     title: String,
     link: String,
+    isLink: Boolean,
   },
 };
 </script>
