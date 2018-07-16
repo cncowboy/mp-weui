@@ -48,7 +48,7 @@
         const pickerOptions = {
           defaultValue: [that.value],
           onChange: function (result) {
-            if (that.onChange) that.onChange(result[0])
+            that.$emit('change', result[0]);
           },
           onConfirm: function (result) {
             if (that.onConfirm) that.onConfirm(result[0])

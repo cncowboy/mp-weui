@@ -14,6 +14,9 @@
 <script>
 import picker from 'mp-weui-platform/picker'
 export default {
+  components: {
+    picker
+  },
   name: 'MpPicker',
   props: {
     value: [String, Array],

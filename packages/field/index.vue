@@ -46,7 +46,7 @@
           v-text="value || placeholder"
           class="weui-input"
         />
-      </picker>      
+      </picker>
       <input
         :cursor-spacing="cursorSpacing"
         @focus="$emit('focus', $event)"
