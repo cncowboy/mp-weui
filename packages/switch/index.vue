@@ -24,7 +24,12 @@
 </template>
 
 <script>
+import switch from 'mp-weui-platform/switch'
+
 export default {
+  components: {
+      switch
+  },
   name: 'MpSwitch',
   props: {
     disabled: {
