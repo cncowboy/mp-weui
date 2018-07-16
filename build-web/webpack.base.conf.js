@@ -38,7 +38,7 @@ const webpackConfig = {
     alias: {
       'vue': 'mpvue',
       '@': resolve('src'),
-      'platform': resolve('platform/wexin')
+      'mp-weui-platform': resolve('platforms/web')
     }
   },
   module: {

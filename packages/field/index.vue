@@ -46,6 +46,19 @@
           class="weui-input"
         />
       </picker>
+      <picker
+        v-else-if="type === 'selector' || type === 'multiSelector' || type === 'region'"
+        @change="onChange"
+        :fields="fields"
+        :value="value"
+        :mode="type"
+        :range="range"
+      >
+        <div
+          v-text="value || placeholder"
+          class="weui-input"
+        />
+      </picker>      
       <input
         :cursor-spacing="cursorSpacing"
         @focus="$emit('focus', $event)"
@@ -87,6 +100,8 @@
 </template>
 
 <script>
+import picker from 'mp-weui-platform/picker'
+
 export default {
   name: 'MpField',
   props: {
@@ -131,7 +146,8 @@ export default {
     vcodeSrc: String,
     vcode: Boolean,
     label: String,
-    value: String,
+    value: [String, Array],
+    range: Array
   },
   data() {
     return {

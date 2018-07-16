@@ -1,6 +1,9 @@
 <script>
 export default {
   created() {},
+  onLaunch() {
+    console.log('launch');
+  },
 };
 </script>
 

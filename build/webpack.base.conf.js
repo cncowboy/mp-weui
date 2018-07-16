@@ -42,7 +42,7 @@ module.exports = {
     alias: {
       'vue': 'mpvue',
       '@': resolve('src'),
-      'mp-weui-platform': resolve('platform/wexin')
+      'mp-weui-platform': resolve('platforms/mp')
     },
     symlinks: false
   },
@@ -64,7 +64,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        include: [resolve('src'), resolve('test')],
+        include: [resolve('src'), resolve('platforms/mp'), resolve('test')],
         use: [
           'babel-loader',
           {

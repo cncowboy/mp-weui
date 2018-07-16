@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import picker from 'mp-weui-platform/picker'
 export default {
   name: 'MpPicker',
   props: {
