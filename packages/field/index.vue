@@ -35,19 +35,7 @@
         />
       </div>
       <picker
-        v-else-if="type === 'date' || type === 'time'"
-        @change="onChange"
-        :fields="fields"
-        :value="value"
-        :mode="type"
-      >
-        <div
-          v-text="value || placeholder"
-          class="weui-input"
-        />
-      </picker>
-      <picker
-        v-else-if="type === 'selector' || type === 'multiSelector' || type === 'region'"
+        v-else-if="type === 'date' || type === 'time' || type === 'selector' || type === 'multiSelector' || type === 'region'"
         @change="onChange"
         :fields="fields"
         :value="value"
@@ -103,6 +91,9 @@
 import picker from 'mp-weui-platform/picker'
 
 export default {
+  components: {
+    picker
+  },
   name: 'MpField',
   props: {
     state: {

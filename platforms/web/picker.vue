@@ -46,7 +46,7 @@
       doPicker () {
         const that = this
         const pickerOptions = {
-          defaultValue: that.value,
+          defaultValue: [that.value],
           onChange: function (result) {
             if (that.onChange) that.onChange(result[0])
           },
