@@ -1,3 +1,3 @@
 import picker from './my-picker'
 
-export picker
+export default { picker }
