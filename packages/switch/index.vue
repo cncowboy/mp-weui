@@ -5,7 +5,7 @@
   >
     <div class="weui-cell__bd">{{title}}</div>
     <div class="weui-cell__ft">
-      <switch
+      <my-switch
         @change="$emit('input', Boolean($event.target.value))"
         :color="disabledColor"
         :disabled="disabled"
@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <switch
+  <my-switch
     @change="$emit('input', Boolean($event.target.value))"
     :color="disabledColor"
     :disabled="disabled"
@@ -24,11 +24,11 @@
 </template>
 
 <script>
-import switch from 'mp-weui-platform/switch'
+import MySwitch from 'mp-weui-platform/switch'
 
 export default {
   components: {
-      switch
+      MySwitch
   },
   name: 'MpSwitch',
   props: {
@@ -44,7 +44,10 @@ export default {
       type: Boolean,
       default: true,
     },
-    title: String,
+    title: {
+      type: String,
+      default: ''
+    }
   },
   computed: {
     disabledColor() {
