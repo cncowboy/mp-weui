@@ -2,7 +2,7 @@
 export default {
   created() {},
   onLaunch() {
-    console.log('launch');
+    // console.log('launch');
   },
 };
 </script>

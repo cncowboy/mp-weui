@@ -88,10 +88,9 @@
 </template>
 
 <script>
-import picker_components from 'mp-weui-platform/picker'
 
 export default {
-  components: picker_components,
+  components: {},
   name: 'MpField',
   props: {
     state: {
