@@ -5,7 +5,7 @@
   >
     <div class="weui-cell__bd">{{title}}</div>
     <div class="weui-cell__ft">
-      <my-switch
+      <switch
         @change="onChange"
         :color="disabledColor"
         :disabled="disabled"
@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <my-switch
+  <switch
     @change="onChange"
     :color="disabledColor"
     :disabled="disabled"

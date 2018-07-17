@@ -9,7 +9,7 @@
     components: {
       XSwitch
     },
-    name: 'MySwitch',
+    name: 'switch',
     props: {
       'type': {
         type: String,

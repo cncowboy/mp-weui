@@ -5,7 +5,11 @@ import MySwitch from './switch'
 const Native = {}
 Native.install = function (Vue) {
   Vue.component('picker', Picker)
-  Vue.component('my-switch', MySwitch)
+  Vue.component('switch', MySwitch)
+
+  Vue.prototype.$getPickerEventValue = (e, range) => {
+    return e
+  }
 }
 
 export default Native
