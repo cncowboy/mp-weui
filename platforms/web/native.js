@@ -10,6 +10,9 @@ Native.install = function (Vue) {
   Vue.prototype.$getPickerEventValue = (e, range) => {
     return e
   }
+  Vue.prototype.$getEventValue = (e) => {
+    return e
+  }
 }
 
 export default Native
