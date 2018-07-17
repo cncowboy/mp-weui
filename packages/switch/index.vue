@@ -24,11 +24,9 @@
 </template>
 
 <script>
-import MySwitch from 'mp-weui-platform/switch'
 
 export default {
   components: {
-      MySwitch
   },
   name: 'MpSwitch',
   props: {
