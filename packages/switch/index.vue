@@ -6,7 +6,7 @@
     <div class="weui-cell__bd">{{title}}</div>
     <div class="weui-cell__ft">
       <my-switch
-        @change="$emit('input', Boolean($event.target.value))"
+        @change="onChange"
         :color="disabledColor"
         :disabled="disabled"
         :checked="value"
@@ -15,7 +15,7 @@
   </div>
 
   <my-switch
-    @change="$emit('input', Boolean($event.target.value))"
+    @change="onChange"
     :color="disabledColor"
     :disabled="disabled"
     :checked="value"
@@ -47,10 +47,16 @@ export default {
       default: ''
     }
   },
+  methods: {
+    onChange (val) {
+      this.$emit('input', val)
+      this.$emit('change', val)
+    }
+  },
   computed: {
     disabledColor() {
       return this.disabled ? 'rgba(0, 0, 0, 0.1)' : '';
-    },
+    }
   },
 };
 </script>

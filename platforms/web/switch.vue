@@ -1,9 +1,10 @@
 <template>
-  <x-switch :title="title" @on-change="onChange" :disabled="disabled" v-model="checked" />
+  <x-switch :title="title" @on-change="onChange" :disabled="disabled" :value="checked" />
 </template>
 
 <script>
   import { XSwitch } from 'vux'
+
   export default {
     components: {
       XSwitch
@@ -29,6 +30,7 @@
       color: String
     },
     computed: {
+    
     },
     methods: {
       onChange (val) {
