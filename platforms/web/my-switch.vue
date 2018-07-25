@@ -1,9 +1,14 @@
 <template>
-  <switch :type="type" @change="onChange" :disabled="disabled" v-model="checked" />
+  <x-switch :title="title" @on-change="onChange" :disabled="disabled" :value="checked" />
 </template>
 
 <script>
+  import { XSwitch } from 'vux'
+
   export default {
+    components: {
+      XSwitch
+    },
     name: 'MySwitch',
     props: {
       'type': {
@@ -25,6 +30,7 @@
       color: String
     },
     computed: {
+    
     },
     methods: {
       onChange (val) {

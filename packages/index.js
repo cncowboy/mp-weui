@@ -19,7 +19,7 @@ import Progress from './progress';
 import Radio from './radio';
 import Search from './search';
 import Slider from './slider';
-import Switch from './switch';
+// import Switch from './switch';
 
 const components = [
   Actionsheet,
@@ -40,7 +40,7 @@ const components = [
   Radio,
   Search,
   Slider,
-  Switch,
+  // Switch,
 ];
 
 function install(Vue) {
@@ -81,7 +81,7 @@ export {
   Radio,
   Search,
   Slider,
-  Switch,
+  // Switch,
 };
 
 export default {
