@@ -3,6 +3,10 @@
     :class="['weui-cell', {'weui-cell_access': !!link, 'weui-cell_link': isLink}]"
     :hover-class="(!isLink && !!link) ? 'weui-cell_active' : 'none'"
     @click="$emit('click', $event)"
+    @touchstart="$emit('touchstart', $event)"
+    @touchmove="$emit('touchmove', $event)"
+    @touchcancel="$emit('touchcancel', $event)"
+    @touchend="$emit('touchend', $event)"
     :link="link"
   >
     <div class="weui-cell_hd">
