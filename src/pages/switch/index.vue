@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import MpSwitch from '../../../packages/switch';
+import MpSwitch from 'mp-weui-platform/switch';
 
 export default {
   data() {
