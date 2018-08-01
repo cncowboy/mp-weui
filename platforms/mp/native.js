@@ -21,6 +21,9 @@ Native.install = function (Vue) {
   Vue.prototype.$getEventValue = (e) => {
     return e.mp.detail.value
   }
+  Vue.prototype.$getActionSheetEventValue = (e) => {
+    return e.tabIndex
+  }
 
 }
 
