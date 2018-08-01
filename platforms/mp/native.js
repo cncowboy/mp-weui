@@ -22,7 +22,7 @@ Native.install = function (Vue) {
     return e.mp.detail.value
   }
   Vue.prototype.$getActionSheetEventValue = (e) => {
-    return e.tabIndex
+    return e.tapIndex
   }
 
 }
