@@ -13,7 +13,7 @@ Native.install = function (Vue) {
   }
   Vue.prototype.$getActionSheetEventValue = (e, menus) => {
     let idx = 0
-    if (typeof(menus) === ‘object’) {
+    if (typeof(menus) === 'object') {
       for (const key in menus) {
         if (e.menuKey === key) return idx
         idx++
