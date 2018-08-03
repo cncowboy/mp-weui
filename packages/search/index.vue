@@ -8,12 +8,12 @@
           size="14"
         />
         <input
-          @confirm="$emit('on-submit', currentValue)"
+          @confirm="$emit('on-submit', currentValue); focus = false"
           class="weui-search-bar__input"
           :confirm-type="confirmType"
           :placeholder="placeholder"
           v-model="currentValue"
-          :focus="visible"
+          :focus="focus"
           type="text"
         />
         <div
@@ -29,7 +29,7 @@
       </div>
       <label
         class="weui-search-bar__label"
-        @click="visible = true"
+        @click="visible = true; focus = true"
         v-if="!visible"
       >
         <icon
@@ -74,6 +74,7 @@ export default {
     return {
       currentValue: this.defaultValue,
       visible: false,
+      focus: false,
     };
   },
   methods: {
