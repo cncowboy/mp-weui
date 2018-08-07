@@ -5,6 +5,9 @@ const Native = {}
 Native.install = function (Vue) {
   Vue.component('picker', Picker)
 
+  Vue.prototype.$getPlatform = () => {
+    return 'web'
+  }
   Vue.prototype.$getPickerEventValue = (e, range) => {
     return e
   }

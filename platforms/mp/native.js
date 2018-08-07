@@ -6,6 +6,9 @@
 const Native = {}
 Native.install = function (Vue) {
   // Vue.component('my-switch', MySwitch)
+  Vue.prototype.$getPlatform = () => {
+    return 'weapp'
+  }
   Vue.prototype.$getPickerEventValue = (e, range) => {
     const value = parseInt(e.mp.detail.value)
     console.log('picker value:', value)
