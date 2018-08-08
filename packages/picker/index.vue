@@ -1,6 +1,6 @@
 <template>
   <picker
-    :mode="multiple ? 'multiSelector' : 'selector'"
+    :mode="mode"
     :range-key="rangeKey"
     :disabled="disabled"
     @change="onChange"
@@ -27,12 +27,18 @@ export default {
       type: Boolean,
       default: false,
     },
-    multiple: Boolean,
+    mode: {
+      type: String
+      default: 'selector'
+    }
   },
   computed: {
     index() {
       return this.getIndex();
     },
+    multiple() {
+      return mode !== 'selector'
+    }
   },
   methods: {
     onChange(e) {
