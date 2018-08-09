@@ -9,11 +9,17 @@ Native.install = function (Vue) {
     return 'web'
   }
   Vue.prototype.$getPickerEventValue = (e, mode, range) => {
+    const padLeft = (str, length) => { 
+      if(str.length >= length) 
+        return str; 
+      else
+        return padLeft('0' + str, length); 
+    }
     if (mode==='date') {
-      const items = e.map(item=>item.value)
+      const items = e.map(item=>padLeft(item.value + '', 2))
       return items.join('-')
     } else if (mode==='time') {
-      const items = e.map(item=>item.value)
+      const items = e.map(item=>padLeft(item.value + '', 2))
       return items.join(':')
     }
     return e
