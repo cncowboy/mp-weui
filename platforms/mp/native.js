@@ -9,17 +9,43 @@ Native.install = function (Vue) {
   Vue.prototype.$getPlatform = () => {
     return 'weapp'
   }
-  Vue.prototype.$getPickerEventValue = (e, range) => {
+  Vue.prototype.$getPickerEventValue = (e, mode, range) => {
     const value = parseInt(e.mp.detail.value)
     console.log('picker value:', value)
-    let i = 0
-    for (let key in range) {
-      if (i === value) {
-        return range[key]
+    if (mode === 'selector') {
+      if (range) {
+        let i = 0
+        for (let key in range) {
+          if (i === value) {
+            return range[key]
+          }
+          i++
+        }
       }
-      i++
-    }
-    return null
+    } else if (mode==='multiSelector') {
+      const result = []
+      if (range) {
+        let colIndex = 0
+        for (let colKey in range) {
+          let rowIndex = 0
+          const rows = range[colKey]
+          for (let rowKey in rows) {
+            if (value[colIndex] === rowIndex) {
+              result.push(rows[rowKey])
+              break;
+            }
+            rowIndex++
+          }
+          colIndex++
+        }
+        return result
+      }
+    } else if (mode==='date') {
+
+    } else if (mode==='time') {
+      
+    }    
+    return e.mp.detail.value
   }
   Vue.prototype.$getEventValue = (e) => {
     return e.mp.detail.value

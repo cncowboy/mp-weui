@@ -8,7 +8,14 @@ Native.install = function (Vue) {
   Vue.prototype.$getPlatform = () => {
     return 'web'
   }
-  Vue.prototype.$getPickerEventValue = (e, range) => {
+  Vue.prototype.$getPickerEventValue = (e, mode, range) => {
+    if (mode==='date') {
+      const items = e.map(item=>item.value)
+      return items.join('-')
+    } else if (mode==='time') {
+      const items = e.map(item=>item.value)
+      return items.join(':')
+    }
     return e
   }
   Vue.prototype.$getEventValue = (e) => {

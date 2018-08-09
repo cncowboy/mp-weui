@@ -10,7 +10,8 @@
   export default {
     name: 'picker',
     props: {
-      model: {
+      id: String,
+      mode: {
         type: String,
         default: 'selector'
       },
@@ -43,34 +44,56 @@
       }
     },
     methods: {
+      convertDateFromString (dateString) {
+        if (dateString) {
+          var arr1 = dateString.split(' ')
+          var sdate = arr1[0].split('-')
+          if (sdate.length !== 3) return null
+          var date = new Date(sdate[0], sdate[1] - 1, sdate[2])
+          return date
+        }
+        return null
+      },
       doPicker () {
         const that = this
         const pickerOptions = {
           defaultValue: [that.value],
           onChange: function (result) {
-            that.$emit('change', result[0]);
           },
           onConfirm: function (result) {
-            if (that.onConfirm) that.onConfirm(result[0])
-            console.log(result)
+            if (result.length === 1) {
+              that.$emit('change', result[0]);
+              return
+            }
+            that.$emit('change', result);
+
+            if (that.onConfirm) {
+              if (result.length === 1) {
+                that.onConfirm(result[0]);
+                return
+              }
+              that.onConfirm(result)
+            }
           },
           onClose: () => {
             if (that.onClose) that.onClose()
           }
         }
-        if (this.model === 'selector') {
+        if (this.mode === 'selector') {
           picker(that.range, pickerOptions)
-        } else if (this.model === 'multiSelector') {
+        } else if (this.mode === 'multiSelector') {
           picker(that.range, pickerOptions)
-        } else if (this.model === 'date') {
-          const date = new Date()
-          const year = date.getFullYear()
-          const month = date.getMonth() + 1
-          const day = date.getDate()
+        } else if (this.mode === 'date') {
+          let theDate = that.convertDateFromString(that.value)
+          if (!theDate) theDate = new Date()
+          const year = theDate.getFullYear()
+          const month = theDate.getMonth() + 1
+          const day = theDate.getDate()
           pickerOptions.defaultValue = [year, month, day]
           pickerOptions.id = 'datePicker'
+          if (that.id) pickerOptions.id += that.id
           datePicker(pickerOptions)
-        } else if (this.model === 'time') {
+        } else if (this.mode === 'time') {
           let timePicker = []
           for (let hour = 0; hour < 24; hour++) {
             let hourPicker = {
