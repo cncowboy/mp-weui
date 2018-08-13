@@ -24,6 +24,17 @@ Native.install = function (Vue) {
     }
     return e
   }
+  Vue.prototype.$getDefaultValueForPicker = (mode, defaultValue, range) => {
+    if (mode === 'selector') {
+      return defaultValue
+    } else if (mode === 'multiSelector') {
+      const values = defaultValue.split(',')
+      return values
+    } else if (mode === 'date') {
+    } else if (mode === 'time') {
+    }
+    return defaultValue
+  }
   Vue.prototype.$getEventValue = (e) => {
     return e
   }

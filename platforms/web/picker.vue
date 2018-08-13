@@ -57,7 +57,7 @@
       doPicker () {
         const that = this
         const pickerOptions = {
-          defaultValue: [that.value],
+          defaultValue: this.mode === 'selector' ? [that.value] : that.value,
           onChange: function (result) {
           },
           onConfirm: function (result) {

@@ -44,8 +44,33 @@ Native.install = function (Vue) {
 
     } else if (mode==='time') {
       
-    }    
+    }
     return e.mp.detail.value
+  }
+  Vue.prototype.$getDefaultValueForPicker = (mode, defaultValue, range) => {
+    if (mode === 'selector') {
+      for (const key in range) {
+        if (defaultValue === range[key].value) {
+          return key
+        }
+      }
+      return -1
+    } else if (mode === 'multiSelector') {
+      const values = defaultValue.split(',')
+      const valueKeys = []
+      for (const colKey in values) {
+        const rows = range[colKey]
+        for (const rowKey in rows) {
+          if (values[colKey] === rows[rowKey].value) {
+            valueKeys.push(rowKey)
+          }
+        }
+      }
+      return valueKeys
+    } else if (mode === 'date') {
+    } else if (mode === 'time') {
+    }
+    return defaultValue
   }
   Vue.prototype.$getEventValue = (e) => {
     return e.mp.detail.value
