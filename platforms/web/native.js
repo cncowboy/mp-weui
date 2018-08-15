@@ -35,8 +35,8 @@ Native.install = function (Vue) {
     }
     return defaultValue
   }
-  Vue.prototype.$getEventValue = (e) => {
-    return e
+  Vue.prototype.$getInputEventValue = (e) => {
+    return e.target.value
   }
   Vue.prototype.$getActionSheetEventValue = (e, menus) => {
     let idx = 0

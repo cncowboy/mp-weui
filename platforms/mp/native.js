@@ -72,8 +72,8 @@ Native.install = function (Vue) {
     }
     return defaultValue
   }
-  Vue.prototype.$getEventValue = (e) => {
-    return e.mp.detail.value
+  Vue.prototype.$getInputEventValue = (e) => {
+    return e.target.value
   }
   Vue.prototype.$getActionSheetEventValue = (e) => {
     return e.tapIndex
