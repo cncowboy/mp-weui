@@ -78,6 +78,11 @@ Native.install = function (Vue) {
   Vue.prototype.$getActionSheetEventValue = (e) => {
     return e.tapIndex
   }
+  Vue.prototype.$getSystemInfo = () => {
+    const res = wx.getSystemInfoSync()
+    res.orientation = 'portrait'
+    return res
+  }
 
 }
 

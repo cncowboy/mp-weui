@@ -41,6 +41,31 @@ Native.install = function (Vue) {
   Vue.prototype.$getActionSheetEventValue = (e, menus) => {
     return e
   }
+  Vue.prototype.$getSystemInfo = () => {
+    // const supportOrientation = (typeof window.orientation === 'number' && typeof window.onorientationchange === 'object')
+    let orientation = window.orientation;
+    switch(orientation){
+      case 90:
+      case -90:
+        orientation = 'landscape'
+        break
+      default:
+        orientation = 'portrait'
+        break
+    }
+    return {
+      screenHeight: document.body.clientHeight, //网页可见区域宽
+      screenWidth: document.body.clientWidth, //网页可见区域高
+
+      // window.screen.height, //屏幕物理分辨率的高
+      // window.screen.width, //屏幕物理分辨率的宽
+      windowWidth: window.screen.availWidth, //屏幕可用工作区高度
+      windowHeight: window.screen.availHeight, //屏幕可用工作区宽度
+
+      pixelRatio: window.devicePixelRatio,
+      orientation: orientation
+    }
+  }
 }
 
 export default Native
