@@ -54,11 +54,11 @@ Native.install = function (Vue) {
         break
     }
     return {
-      screenHeight: document.body.clientHeight, //网页可见区域宽
-      screenWidth: document.body.clientWidth, //网页可见区域高
+      // screenHeight: document.body.clientHeight, //网页可见区域宽
+      // screenWidth: document.body.clientWidth, //网页可见区域高
 
-      // window.screen.height, //屏幕物理分辨率的高
-      // window.screen.width, //屏幕物理分辨率的宽
+      screenHeight: window.screen.height, //屏幕物理分辨率的高
+      screenWidth: window.screen.width, //屏幕物理分辨率的宽
       windowWidth: window.screen.availWidth, //屏幕可用工作区高度
       windowHeight: window.screen.availHeight, //屏幕可用工作区宽度
 

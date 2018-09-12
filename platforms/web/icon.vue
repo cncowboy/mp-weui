@@ -1,5 +1,5 @@
 <template>
-  <icon :type="type"></icon>
+  <icon :type="type" :class="classExt"></icon>
 </template>
 
 <script>
@@ -22,6 +22,10 @@ export default {
     size: {
       type: Number,
       default: 23,
+    },
+    classExt: {
+      type: String,
+      default: '',
     }
   }
 };
