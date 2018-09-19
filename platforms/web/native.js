@@ -41,6 +41,9 @@ Native.install = function (Vue) {
   Vue.prototype.$getActionSheetEventValue = (e, menus) => {
     return e
   }
+  Vue.prototype.$getEventTouches = (e) => {
+    return e.touches
+  }
   Vue.prototype.$getSystemInfo = () => {
     // const supportOrientation = (typeof window.orientation === 'number' && typeof window.onorientationchange === 'object')
     let orientation = window.orientation;
@@ -65,6 +68,9 @@ Native.install = function (Vue) {
       pixelRatio: window.devicePixelRatio,
       orientation: orientation
     }
+  }
+  Vue.prototype.$previewImage = (opts) => {
+    
   }
 }
 

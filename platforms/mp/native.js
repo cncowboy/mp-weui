@@ -78,12 +78,17 @@ Native.install = function (Vue) {
   Vue.prototype.$getActionSheetEventValue = (e) => {
     return e.tapIndex
   }
+  Vue.prototype.$getEventTouches = (e) => {
+    return e.mp.touches
+  }  
   Vue.prototype.$getSystemInfo = () => {
     const res = wx.getSystemInfoSync()
     res.orientation = 'portrait'
     return res
   }
-
+  Vue.prototype.$previewImage = (opts) => {
+    wx.previewImage(opts)
+  }
 }
 
 export default Native
