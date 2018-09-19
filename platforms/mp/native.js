@@ -86,9 +86,6 @@ Native.install = function (Vue) {
     res.orientation = 'portrait'
     return res
   }
-  Vue.prototype.$previewImage = (opts) => {
-    wx.previewImage(opts)
-  }
 }
 
 export default Native

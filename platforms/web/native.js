@@ -69,9 +69,6 @@ Native.install = function (Vue) {
       orientation: orientation
     }
   }
-  Vue.prototype.$previewImage = (opts) => {
-    
-  }
 }
 
 export default Native
