@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     onChange (e) {
-      const val = this.$getEventValue(e)
+      const val = this.$getInputEventValue(e)
       console.log(val)
       this.$emit('input', val)
       this.$emit('change', val)

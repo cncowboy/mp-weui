@@ -103,8 +103,7 @@ icon {
   display: inline-block;
   height: 6px;
   width: 6px;
-  border-width: 2px 2px 0 0;
-  border-color: #C8C8CD;
+  border-width: 2px 2px 0 0  border-color: #C8C8CD;
   border-style: solid;
   -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
           transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
@@ -550,7 +549,7 @@ icon {
   margin-top: 15px;
 }
 .weui-btn:first-child {
-  margin-top: 0;
+  /*margin-top: 0;*/
 }
 .weui-btn-area {
   margin: 1.17647059em 15px 0.3em;
