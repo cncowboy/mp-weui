@@ -77,6 +77,10 @@
         style="width:110px"
         :src="vcodeSrc"
       />
+      <div
+        v-if="!vcode && footText"
+        v-text="footText"
+      />      
       <icon
         v-if="!vcode && state"
         :type="newState"
@@ -134,6 +138,7 @@ export default {
     vcodeSrc: String,
     vcode: Boolean,
     label: String,
+    footText: String,
     value: [String, Array],
     range: Array
   },
