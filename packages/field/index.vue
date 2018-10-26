@@ -25,6 +25,7 @@
           :maxlength="maxlength"
           class="weui-textarea"
           :disabled="disabled"
+          :readonly="readOnly"
           @input="onChange"
           :value="value"
         />
@@ -55,6 +56,7 @@
         :placeholder="placeholder"
         :maxlength="maxlength"
         :disabled="disabled"
+        :readonly="readOnly"
         class="weui-input"
         @input="onChange"
         :value="value"
@@ -108,6 +110,10 @@ export default {
       default: 'text',
     },
     disabled: {
+      type: Boolean,
+      default: false,
+    },
+    readOnly: {
       type: Boolean,
       default: false,
     },
