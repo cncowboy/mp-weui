@@ -65,7 +65,7 @@
       />
       <!-- </slot> -->
     </div>
-    <div class="weui-cell__ft">
+    <div class="weui-cell__ft" @click="onFootClick">
       <!-- <slot name="ft"> -->
       <div
         v-if="vcode && !vcodeSrc"
@@ -165,6 +165,9 @@ export default {
     onChange(e) {
       this.$emit('input', e.target.value);
       this.$emit('change', e.target.value);
+    },
+    onFootClick(e) {
+      this.$emit('footClick', e.target.value);
     },
   },
 };
